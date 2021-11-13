@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      html {
+        font-family: Verdana, sans-serif;
+        text-align: center;
+      }
+      hr {
+        border: none;
+        border-bottom: 1px solid #eee;
+        margin: 1rem;
+      }
+      h1 {
+        margin: 1rem 0;
+      }
+      main {
+        max-width: 20rem;
+        margin: 0 auto;
+      }
+
+      footer {
+        color: #ccc;
+        margin: 3rem 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>JavaScript is required to manage your todo list</noscript>
+    <todo-list>
+      <header>
+        <h1>Todo List</h1>
+        X remaining
+      </header>
+      <hr/>
+      <main>
+        <hr/>
+        <nav></nav>
+        <hr/>
+        <ul></ul>
+        <hr/>
+      </main>
+    </todo-list>
+
+    <footer>
+      Handcrafted with &hearts; by <a href="https://tychi.me">~tychi</a>. Resist.
+      <br/><br/>
+      <a href="https://git.sr.ht/~tychi/todo-list/tree/main/item/todo-list.js">JavaScript Source Code</a> and <a href="https://git.sr.ht/~tychi/todo-list/tree/main/item/index.html">HTML Source Code</a>
+    </footer>
+    <script type="module" src="./todo-list.js"></script>
+  </body>
+</html>
