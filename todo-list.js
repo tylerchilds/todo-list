@@ -98,7 +98,7 @@ on('submit', 'form', function submitForm(event) {
 
   // if the input is valid, create a new item and clear the field
   if(validate(input)) {
-    createItem(input.value);
+    createItem(input.value)
     input.value = ''
   }
 
@@ -129,7 +129,7 @@ function status() {
 // add a click event listener for toggling a task's completeness
 on('click', '[data-toggle]', function toggleCompleteness({ target }) {
   // get the id of the toggled task and locate the corresponding item in state
-  const { id } = target.dataset;
+  const { id } = target.dataset
   const item = find(id)
 
   // calls a helper function to update the items state for this updated item
@@ -141,7 +141,7 @@ on('click', '[data-toggle]', function toggleCompleteness({ target }) {
 
 // add a click event listener for removing an item from items state
 on('click', '[data-delete]', function remove({ target }) {
-  const { id } = target.dataset;
+  const { id } = target.dataset
   const item = find(id)
 
   // calls a helper function to delete this item from the items state
@@ -151,7 +151,7 @@ on('click', '[data-delete]', function remove({ target }) {
 // returns the list of items corresponding to the current filter
 function list() {
   // grab the filter and items state
-  const { filter, items } = get();
+  const { filter, items } = get()
 
   // a callback function that determines if an item matches the current filter
   const filterItems = (item) => {
@@ -162,7 +162,7 @@ function list() {
       'DONE': item.completed
     }
     // use the current filter to know if the item is shown/hidden
-    return lookup[filter];
+    return lookup[filter]
   }
 
   return items
@@ -206,7 +206,7 @@ function createItem(task) {
   }
 
   // add the new item to the items state
-  set(item, handler);
+  set(item, handler)
 }
 
 // a helper function to update the items state for an item
@@ -218,7 +218,7 @@ function updateItem(item) {
       items: [
         ...state.items.map((item) => {
           if(item.id !== payload.id) {
-            return item;
+            return item
           }
 
           return {
@@ -227,11 +227,11 @@ function updateItem(item) {
           }
         })
       ]
-    };
-  };
+    }
+  }
 
   // update the item in the item state
-  set(item, handler);
+  set(item, handler)
 }
 
 // a helper function to remove an item from the items state
@@ -243,15 +243,15 @@ function deleteItem(item) {
       items: [
         ...state.items.filter((item) => {
           if(item.id !== payload.id) {
-            return item;
+            return item
           }
         })
       ]
-    };
-  };
+    }
+  }
 
   // remove the item from the item state
-  set(item, handler);
+  set(item, handler)
 }
 
 // a helper function for rendering the clear and complete actions
